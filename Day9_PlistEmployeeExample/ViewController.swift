@@ -21,6 +21,30 @@ class ViewController: UIViewController {
             let dictionary = NSMutableDictionary(contentsOfFile: bundlePath)
             
             print(dictionary!.description)
+            print("------------countrylist from plist files--------")
+            
+            let countryList = dictionary!["countrys"] as! NSArray
+            print((countryList[0]))
+            for c in countryList
+            {
+                print(c)
+            }
+            
+            print("-----------employeelist from plist file--------")
+            let employeeList=dictionary!["employees"] as! NSArray
+            
+            for e in employeeList
+            {
+                let emp =  e as! NSDictionary
+                print("employee ID: \(emp["eid"]!)")
+                print("employee name :\(emp["enm"]!)")
+                print("employee salary: \(emp["salary"]!)")
+                print("--------------------")
+                
+            }
+            
+            
+            
         }
     }
 
